@@ -36,9 +36,9 @@ class PhotoStreamViewController: UICollectionViewController {
     }
     
     collectionView!.backgroundColor = UIColor.clearColor()
-    let size = CGRectGetWidth(collectionView!.bounds) / 2
-    let layout = collectionViewLayout as UICollectionViewFlowLayout
-    layout.itemSize = CGSize(width: size, height: size)
+    let layout = collectionViewLayout as PinterestLayout
+    layout.delegate = self
+    layout.numberOfColumns = 2
   }
   
 }
@@ -53,6 +53,15 @@ extension PhotoStreamViewController {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as UICollectionViewCell
     cell.contentView.backgroundColor = colors[indexPath.item]
     return cell
+  }
+  
+}
+
+extension PhotoStreamViewController: PinterestLayoutDelegate {
+  
+  func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    let random = arc4random_uniform(4) + 1
+    return CGFloat(random * 100)
   }
   
 }
