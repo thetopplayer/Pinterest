@@ -21,4 +21,9 @@ class AnnotatedPhotoCell: UICollectionViewCell {
     }
   }
   
+  override func layoutSubviews() {
+    contentView.frame = bounds
+    super.layoutSubviews()
+  }
+  
 }
