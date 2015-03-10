@@ -59,7 +59,11 @@ extension PhotoStreamViewController: PinterestLayoutDelegate {
   }
   
   func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-    return 60
+    let photo = photos[indexPath.item]
+    let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+    let commentHeight = photo.heightForComment(font, width: width)
+    let height = 4 + 17 + commentHeight + 4
+    return height
   }
   
 }
