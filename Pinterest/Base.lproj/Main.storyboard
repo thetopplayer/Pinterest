@@ -18,12 +18,46 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-Ve-ynZ" customClass="RoundedCornersView" customModule="Pinterest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="260"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khC-vr-mlt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="1AV-3E-waQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="khC-vr-mlt" secondAttribute="trailing" id="8lu-7R-Ibn"/>
+                                                <constraint firstItem="khC-vr-mlt" firstAttribute="top" secondItem="dYa-Ve-ynZ" secondAttribute="top" id="gKe-cJ-Su9"/>
+                                                <constraint firstItem="khC-vr-mlt" firstAttribute="leading" secondItem="dYa-Ve-ynZ" secondAttribute="leading" id="xe6-ST-2or"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="customSize" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dYa-Ve-ynZ" secondAttribute="trailing" id="1nn-MU-nMY"/>
+                                    <constraint firstAttribute="bottom" secondItem="dYa-Ve-ynZ" secondAttribute="bottom" id="FMR-rR-uI2"/>
+                                    <constraint firstItem="dYa-Ve-ynZ" firstAttribute="leading" secondItem="YvZ-ba-bjz" secondAttribute="leading" id="kDy-Bg-pKg"/>
+                                    <constraint firstItem="dYa-Ve-ynZ" firstAttribute="top" secondItem="YvZ-ba-bjz" secondAttribute="top" id="n4H-Lx-fQG"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="260"/>
+                                <connections>
+                                    <outlet property="imageView" destination="khC-vr-mlt" id="AB3-3Q-dAV"/>
+                                    <outlet property="imageViewHeightLayoutConstraint" destination="1AV-3E-waQ" id="VzL-93-ehA"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
