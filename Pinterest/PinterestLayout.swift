@@ -10,7 +10,7 @@ import UIKit
 
 protocol PinterestLayoutDelegate {
   
-  func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat
+  func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath) -> CGFloat
   
 }
 
@@ -47,11 +47,7 @@ class PinterestLayout: UICollectionViewLayout {
       var column = 0
       for item in 0..<collectionView!.numberOfItemsInSection(0) {
         let indexPath = NSIndexPath(forItem: item, inSection: 0)
-        
-        let width = columnWidth - (cellPadding * 2)
-        let itemHeight = delegate.collectionView(collectionView!, heightForItemAtIndexPath: indexPath, withWidth: width)
-        let height = itemHeight + (cellPadding * 2)
-        
+        let height = delegate.collectionView(collectionView!, heightForItemAtIndexPath: indexPath)
         let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
         let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
         let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
