@@ -31,11 +31,23 @@
                                                         <constraint firstAttribute="height" constant="200" id="1AV-3E-waQ"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdX-Ha-DAg">
+                                                    <rect key="frame" x="4" y="204" width="192" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="tYq-kW-5LB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="khC-vr-mlt" secondAttribute="trailing" id="8lu-7R-Ibn"/>
+                                                <constraint firstItem="xdX-Ha-DAg" firstAttribute="leading" secondItem="dYa-Ve-ynZ" secondAttribute="leading" constant="4" id="9oV-B0-Bvl"/>
+                                                <constraint firstItem="xdX-Ha-DAg" firstAttribute="top" secondItem="khC-vr-mlt" secondAttribute="bottom" constant="4" id="c9f-qj-9ms"/>
                                                 <constraint firstItem="khC-vr-mlt" firstAttribute="top" secondItem="dYa-Ve-ynZ" secondAttribute="top" id="gKe-cJ-Su9"/>
+                                                <constraint firstAttribute="trailing" secondItem="xdX-Ha-DAg" secondAttribute="trailing" constant="4" id="jNK-e1-kfh"/>
                                                 <constraint firstItem="khC-vr-mlt" firstAttribute="leading" secondItem="dYa-Ve-ynZ" secondAttribute="leading" id="xe6-ST-2or"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -55,6 +67,7 @@
                                 </constraints>
                                 <size key="customSize" width="200" height="260"/>
                                 <connections>
+                                    <outlet property="captionLabel" destination="xdX-Ha-DAg" id="EEs-JD-mvv"/>
                                     <outlet property="imageView" destination="khC-vr-mlt" id="AB3-3Q-dAV"/>
                                     <outlet property="imageViewHeightLayoutConstraint" destination="1AV-3E-waQ" id="VzL-93-ehA"/>
                                 </connections>
