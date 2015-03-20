@@ -5,7 +5,7 @@ Pinterest-like Custom Collection View Layout
 
 Click the screenshot to view a video of the layout in action.
 
-#### Learn how to build this layout
+#### Learn How to Build This Layout
 
 1. [Custom Collection View Layouts: Pinterest – Basic Layout](http://www.raywenderlich.com/99146/video-tutorial-custom-collection-view-layouts-part-1-pinterest-basic-layout)
 2. [Custom Collection View Layouts: Pinterest – Layout Attributes](http://www.raywenderlich.com/99436/video-tutorial-custom-collection-view-layouts-part-2-pinterest-layout-attributes)
