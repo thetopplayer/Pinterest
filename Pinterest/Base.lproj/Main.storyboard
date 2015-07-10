@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zyh-ad-FlB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hWy-EM-Sqa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pdX-ph-a7V">
+            <objects>
+                <navigationController id="hWy-EM-Sqa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Z3-io-RTV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zyh-ad-FlB" kind="relationship" relationship="rootViewController" id="GGS-wr-yK1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ByY-aj-gqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-237" y="381"/>
+        </scene>
         <!--Photo Stream View Controller-->
         <scene sceneID="kqS-Pz-3ln">
             <objects>
@@ -88,6 +104,13 @@
                             <outlet property="delegate" destination="Zyh-ad-FlB" id="K8V-Lj-5ur"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="tYx-GJ-QXp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bRo-Hs-uy9">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="Zyh-ad-FlB" id="NzN-hd-ZOf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNh-dI-6Sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

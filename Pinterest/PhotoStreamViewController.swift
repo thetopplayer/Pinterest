@@ -25,12 +25,23 @@ class PhotoStreamViewController: UICollectionViewController {
     }
     
     collectionView!.backgroundColor = UIColor.clearColor()
-    collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+    collectionView!.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     
-    let layout = collectionViewLayout as PinterestLayout
+    let layout = collectionViewLayout as! PinterestLayout
     layout.cellPadding = 5
     layout.delegate = self
     layout.numberOfColumns = 2
+  }
+  
+  @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+    let index = photos.count
+    photos += Photo.allPhotos()
+    var indexPaths: [NSIndexPath] = []
+    for i in index..<photos.count {
+      let indexPath = NSIndexPath(forItem: i, inSection: 0)
+      indexPaths.append(indexPath)
+    }
+    if (!indexPaths.isEmpty) { collectionView!.insertItemsAtIndexPaths(indexPaths) }
   }
   
 }
@@ -42,7 +53,7 @@ extension PhotoStreamViewController {
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as AnnotatedPhotoCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
     cell.photo = photos[indexPath.item]
     return cell
   }

@@ -15,7 +15,7 @@ class Photo {
     if let URL = NSBundle.mainBundle().URLForResource("Photos", withExtension: "plist") {
       if let photosFromPlist = NSArray(contentsOfURL: URL) {
         for dictionary in photosFromPlist {
-          let photo = Photo(dictionary: dictionary as NSDictionary)
+          let photo = Photo(dictionary: dictionary as! NSDictionary)
           photos.append(photo)
         }
       }
